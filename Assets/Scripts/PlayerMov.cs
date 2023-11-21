@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMov : MonoBehaviour
 {
@@ -18,5 +19,18 @@ public class PlayerMov : MonoBehaviour
 
         //mover el jugador en la direccion calculada
         transform.Translate(movement * movementSpeed * Time.deltaTime);
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            SceneManager.LoadScene("Defeat");
+            Destroy(this.gameObject);
+        }
+        else if (collision.CompareTag("Wall"))
+        {
+            SceneManager.LoadScene("Defeat");
+            Destroy(this.gameObject);
+        }
     }
 }
