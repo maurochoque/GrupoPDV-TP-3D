@@ -54,8 +54,9 @@ public class SpawnerPatrolCube : MonoBehaviour
             //simplificado, movera el GameObject que tenga este scrip desde su transform.position
             //hacia targetPosition a una velocidad de patrolSpeed * Time.deltaTime
             transform.position = Vector3.Lerp(transform.position, targetPosition, patrolSpeed * Time.deltaTime);
-            //aumenta en cada vuelta del bucle
+            //aumenta en cada vuelta del bucle, para que en algun momento deje de cumplirse el while
             controlTime += Time.deltaTime;
+            //para realizar una pequeña en la ejecucion de esta corrutina, hasta el siguiente frame
             yield return null;
         }
     }

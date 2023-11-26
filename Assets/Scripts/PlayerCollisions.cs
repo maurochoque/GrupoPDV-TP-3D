@@ -11,14 +11,15 @@ public class PlayerCollisions : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            SceneManager.LoadScene("Defeat");
+            SceneManager.LoadScene("DefeatScene");
             Destroy(this.gameObject);
         }
         
         else if (collision.CompareTag("Wall"))
         {
-            SceneManager.LoadScene("Defeat");
+            SceneManager.LoadScene("DefeatScene");
             Destroy(this.gameObject);
+            
         }
     }
 
