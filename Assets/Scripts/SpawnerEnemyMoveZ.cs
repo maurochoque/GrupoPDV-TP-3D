@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class SpawnerEnemyMoveZ : MonoBehaviour
 {
-   public float speedXenemy = 5f;
+   public float speedZenemy = 5f;
     Rigidbody rb;
     void Start()
     {
         rb=GetComponent<Rigidbody>();
         //inicia el movimiento hacia la derecha
-        MoveRight();
+        MoveUp();
     }
 
-    void MoveRight()
+    void MoveUp()
     {
+        //primero se mueve en el eje Z aumentando
+        rb.velocity = new Vector3(0, 0, speedZenemy);
 
-        rb.velocity = new Vector3(0, 0, speedXenemy);
-
-        //llama a MoveLeft despues de 4 segundos
-        Invoke("MoveLeft", 2.5f);
+        //llama a MoveLeft despues de 2 segundos
+        Invoke("MoveBot", 2.5f);
     }
 
-    void MoveLeft()
+    void MoveBot()
     {
-        //mueve hacia la izquierda
-        transform.Translate(Vector3.up * speedXenemy * Time.deltaTime);
-
-        //llaama a MoveRight despues de 4 segundos
-        Invoke("MoveRight", 2.5f);
+        //mueve en el eje Z aumentando(hacia adelante)
+        //transform.Translate(Vector3.forward * speedZenemy * Time.deltaTime);
+        
+        //llaama a MoveRight despues de 2 segundos
+        Invoke("MoveUp", 2.5f);
         //cambia el valor de speedXenemy al contrario para cambio de direccion
-        speedXenemy*=-1;
+        speedZenemy*=-1;
     }
 }

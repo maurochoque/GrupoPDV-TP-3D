@@ -19,8 +19,11 @@ public class EnemyMovement : MonoBehaviour
     {
         transform.Translate(enemyDirection * Time.deltaTime * speedXenemy, 0, 0);
     }
+
     private void OnTriggerEnter(Collider collision)
     {
+        //condicional para destruir este GameObject cuando toque colisione con el GameObject
+        // con Tag(etiqueta) Wall
         if(collision.CompareTag("Wall"))
         {
             Destroy(this.gameObject);
