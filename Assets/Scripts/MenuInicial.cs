@@ -16,7 +16,10 @@ public class MenuInicial : MonoBehaviour
 
     public void Salir()
     {
+        //detiene el modo ejecucion de unity
+        UnityEditor.EditorApplication.isPlaying = false;
         Debug.Log("salir");
+        //para simular que salimos del videojuego
         Application.Quit();
     }
 }
