@@ -24,16 +24,15 @@ public class EnemySpecial : MonoBehaviour
         while (true)
         {
             //calcula la distancia entre el EnemySpecial(que tiene este script) y el player
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            float distancePlayer = Vector3.Distance(transform.position, player.position);
 
             //si el player esta dentro de la distancia de deteccion
-            if (distanceToPlayer <= detectionDistance)
+            if (distancePlayer <= detectionDistance)
             {
-                //el GameObject que tiene este script se movera hacia la posicion de player
-                // (private Transform player, que contiene el transform del GameObject con Tag Player)
+                //el GameObject que tiene este script sigue/mira (pero NO se mueve) al GameObject que se pasa por parametro
                 transform.LookAt(player);
                 //una vez que se ubica la posicion del player, EnemySpecial(que tiene este script) se movera
-                // hacia adelanta persiguiendo al player, * speed * Time.deltaTime para fluidez independiente de los FPS
+                // hacia adelanta(a la posicion de player) persiguiendo al player, * speed * Time.deltaTime para fluidez independiente de los FPS
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 //para ver en la pantalla de prueba el rayo (raycast)
                 Debug.DrawRay(transform.position, transform.forward * detectionDistance, Color.red);
