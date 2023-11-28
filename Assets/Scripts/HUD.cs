@@ -11,10 +11,11 @@ public class HUD : MonoBehaviour
 
     void Update()
     {
-        //actualiza el TextMeshProUGUI con el tiempo restante formateado como un numero entero.
+        //del GameObject score (tipo TextMeshProUGUI) se cambia el text 
+        // por el valor de time, ToString convierte el contenido de time en String con formato F0(Sin Decimal, redondea al numero entero mas cercano)
         score.text = time.ToString("F0");
 
-        //imprime el tiempo actual en la consola de Unity.
+        //imprime el tiempo actual en la consola de Unity. ToString convierte el valor de time en String, con formato F2(2 Decimales)
         Debug.Log("Tiempo restante: " + time.ToString("F2"));
 
         //reduce el tiempo restante en cada fotograma.
