@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnerPatrolCube : MonoBehaviour
 {
-     public float patrolSpeed = 5f; //velocidad de patrullaje ajustada
+     public float patrolSpeed = 5f; //velocidad de patrullaje
     public float patrolDuration = 1f; //duracion de cada patrullaje en una direccio
     private Vector3 initialPosition;
 

@@ -18,7 +18,7 @@ public class SpawnerEnemyMoveZ : MonoBehaviour
         //primero se mueve en el eje Z aumentando
         rb.velocity = new Vector3(0, 0, speedZenemy);
 
-        //llama a MoveLeft despues de 2 segundos
+        //llama a MoveBot despues de 2 segundos
         Invoke("MoveBot", 2.5f);
     }
 
